@@ -24,7 +24,7 @@ struct SinglePanelView: View {
                 .font(.system(size: 22))
                 .foregroundColor(.gray)
             // Scaling ...
-                .scaleEffect(startAnimation ? 1 : 0)
+                .scaleEffect(startAnimation ? 1 : 0.01)
             // Background Animation
                 .background(
                     ZStack {
@@ -32,7 +32,7 @@ struct SinglePanelView: View {
                             .fill(Color.gray)
                             .clipShape(Circle())
                             .frame(width: 200, height: 200)
-                            .scaleEffect(bgAnimation ? 2.2 : 0)
+                            .scaleEffect(bgAnimation ? 2.2 : 0.01)
                             .opacity(animationEnded ? 0 : 1)
                     }
                 )
