@@ -45,14 +45,7 @@ struct SinglePanelView: View {
         }
         .onTapGesture(count: 2) {
             
-            if tapComplete {
-                startAnimation = false
-                bgAnimation = false
-                resetBG = false
-                animationEnded = false
-                tapComplete = false
-                return
-            }
+            updateFields(value: false)
             
             if startAnimation {
                 return
@@ -86,7 +79,13 @@ struct SinglePanelView: View {
                 }
             }
         }
-        
+    }
+    
+    private func updateFields(value: Bool) {
+        startAnimation = value
+        bgAnimation = value
+        resetBG = value
+        animationEnded = value
     }
 }
 
